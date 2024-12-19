@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import logoimg from "../../public/logopathforge.png"
+import Image from 'next/image';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,8 +28,8 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-2">
-            <img
-              src="/logo.svg" // Replace with actual logo path
+            <Image
+              src={logoimg} // Replace with actual logo path
               alt="Platform Logo"
               className="h-8 w-8"
             />
