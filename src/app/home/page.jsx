@@ -184,8 +184,10 @@ export default function Page() {
           </div>
         </section>
 
+        <div className="bg-no-repeat bg-cover bg-gradient-to-b from-gray-900 to-gray-700"  >
+
         {/* Companies We Helped */}
-        <section className="w-full py-16 companies-gradient">
+        <section className="w-full py-16 companies-gradient bg-no-repeat">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col items-center justify-center space-y-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#5B4DFF] text-center">
@@ -217,51 +219,65 @@ export default function Page() {
     </section>
 
         {/* Categories Section */}
-        <section className="w-full py-16 bg-white font-sans">
-          <div className="container px-6 md:px-12">
-            <div className="flex flex-col space-y-8">
-              <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-semibold tracking-tighter">
-                  Explore by <span className="text-[#5B4DFF]">category</span>
-                </h2>
-                <Link href="#" className="hidden sm:flex items-center text-[#5B4DFF] hover:underline">
-                  Show all jobs
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 font-sans">
-                {[
-                  { icon: Palette, label: "Design", count: "235" },
-                  { icon: Users, label: "Sales", count: "132" },
-                  { icon: LayoutDashboard, label: "Marketing", count: "156" },
-                  { icon: Settings, label: "Finance", count: "320" },
-                  { icon: Code2, label: "Technology", count: "445" },
-                  { icon: Briefcase, label: "Engineering", count: "542" },
-                  { icon: GraduationCap, label: "Business", count: "271" },
-                  { icon: HeartHandshake, label: "Human Resource", count: "345" },
-                ].map(({ icon: Icon, label, count }, i) => (
-                  <Card key={i} className="group relative overflow-hidden border hover:border-[#5B4DFF] transition-colors font-sans">
-                    <CardContent className="p-6">
-                      <div className="flex items-start justify-between">
-                        <div className="space-y-2">
-                          <div className="size-12 rounded-lg bg-[#5B4DFF]/10 flex items-center justify-center">
-                            <Icon className="h-6 w-6 text-[#5B4DFF]" />
-                          </div>
-                          <h3 className="font-semibold font-sans">{label}</h3>
-                          <p className="text-sm text-gray-500 font-sans">{count} jobs available</p>
-                        </div>
-                        <ArrowRight className="h-5 w-5 text-[#5B4DFF] opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                    </CardContent>
-                    <Link href="#" className="absolute inset-0">
-                      <span className="sr-only">View {label} jobs</span>
-                    </Link>
-                  </Card>
-                ))}
-              </div>
-            </div>
+        <section className="w-full py-16 font-sans bg-no-repeat bg-cover bg-[url('/background-image.jpg')]">
+      <div className="container px-6 md:px-12 mx-auto">
+        <div className="flex flex-col space-y-8">
+          <div className="flex items-center justify-between">
+            <h2 className="text-3xl text-white font-semibold tracking-tighter">
+              Explore by <span className="text-[#5f53e3]">category</span>
+            </h2>
+            <Link href="#" className="hidden sm:flex items-center text-[#5B4DFF] hover:underline">
+              Show all jobs
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
-        </section>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 font-sans">
+            <CategoryCard
+              icon={Palette}
+              label="Design"
+              count="235"
+            />
+            <CategoryCard
+              icon={Users}
+              label="Sales"
+              count="132"
+            />
+            <CategoryCard
+              icon={LayoutDashboard}
+              label="Marketing"
+              count="156"
+            />
+            <CategoryCard
+              icon={Settings}
+              label="Finance"
+              count="320"
+            />
+            <CategoryCard
+              icon={Code2}
+              label="Technology"
+              count="445"
+            />
+            <CategoryCard
+              icon={Briefcase}
+              label="Engineering"
+              count="542"
+            />
+            <CategoryCard
+              icon={GraduationCap}
+              label="Business"
+              count="271"
+            />
+            <CategoryCard
+              icon={HeartHandshake}
+              label="Human Resource"
+              count="345"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+        </div>
 
         {/* Job Posting Section */}
         <section className="w-full py-16 bg-[#5B4DFF]">
@@ -294,3 +310,25 @@ export default function Page() {
     </div>
   );
 }
+
+function CategoryCard({ icon: Icon, label, count }) {
+    return (
+      <Card className="group relative overflow-hidden border border-white/10 hover:border-[#5B4DFF] transition-colors font-sans bg-white/10 backdrop-filter backdrop-blur-lg">
+        <CardContent className="p-6">
+          <div className="flex items-start justify-between">
+            <div className="space-y-2">
+              <div className="size-12 rounded-lg bg-[#5B4DFF]/20 flex items-center justify-center">
+                <Icon className="h-6 w-6 text-white" />
+              </div>
+              <h3 className="font-semibold font-sans text-white">{label}</h3>
+              <p className="text-sm text-gray-300 font-sans">{count} jobs available</p>
+            </div>
+            <ArrowRight className="h-5 w-5 text-[#5B4DFF] opacity-0 group-hover:opacity-100 transition-opacity" />
+          </div>
+        </CardContent>
+        <Link href="#" className="absolute inset-0">
+          <span className="sr-only">View {label} jobs</span>
+        </Link>
+      </Card>
+    )
+  }
