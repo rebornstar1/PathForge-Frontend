@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import logoimg from "../../public/logopathforge.png"
+import {logoimg} from "../../public/logopathforge.png"
 import Image from 'next/image';
 
 export default function Header() {
