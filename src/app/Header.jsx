@@ -55,13 +55,13 @@ export default function Header() {
         {/* Call-to-Actions */}
         <div className="flex items-center gap-4">
           <Link
-            href="/login"
+            href="/sign-in"
             className="hidden md:inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white hover:bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-700 shadow-sm transition duration-200"
           >
             Log In
           </Link>
           <Link
-            href="/signup"
+            href="/sign-up"
             className="hidden md:inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition duration-200"
           >
             Sign Up
