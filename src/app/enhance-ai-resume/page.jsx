@@ -112,10 +112,10 @@ export default function AdvancedResumeBuilder() {
   return (
     <div className="h-screen flex flex-col bg-gradient-to-r from-blue-300 via-slate-100 to-blue-100">
       <div className="flex-1 overflow-hidden p-4">
-        <div className="bg-white rounded-lg shadow-lg h-full flex flex-col">
+        <div className="bg-white rounded-lg shadow-lg h-full flex flex-col ">
           <div className="border-b bg-gray-50 rounded-t-lg">
             <div className="flex h-16 items-center px-4 gap-4">
-              <h1 className="text-xl font-bold text-blue-600">Resume Builder</h1>
+              <h1 className="text-xl font-bold text-blue-800">Pathforge - <span className="text-black">AI Resume Enhancer</span></h1>
               <div className="ml-auto flex items-center gap-4">
                 <TemplateSelector onSelect={setActiveTemplate} />
                 <div className="flex items-center space-x-2">
