@@ -32,21 +32,21 @@ const Banner = () => {
   style={{ backgroundImage: `url(${jobbanner.src})` }}
 >      <div className="absolute inset-0 bg-black opacity-40"></div> {/* Dark overlay */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6">
-        <h1 className="text-4xl font-semibold mb-4 drop-shadow-lg">Welcome to Your Dream Job</h1>
-        <p className="text-lg mb-8 drop-shadow-lg">Find the best opportunities tailored just for you. Start your journey now!</p>
+        <h1 className="text-4xl font-semibold mb-4 drop-shadow-lg text-white tracking-wide">Welcome to Your Dream Job</h1>
+        <p className="text-lg mb-8 drop-shadow-lg tracking-wide">Find the best opportunities tailored just for you. Start your journey now!</p>
         
         {/* Stats Section */}
         <div className="flex gap-10 mb-8">
           <div className="text-center">
-            <h2 className="text-2xl font-bold">{jobsFilled}+</h2>
+            <h2 className="text-2xl font-bold text-white">{jobsFilled}+</h2>
             <p className="text-sm">Jobs Filled</p>
           </div>
           <div className="text-center">
-            <h2 className="text-2xl font-bold">{peopleHired}+</h2>
+            <h2 className="text-2xl font-bold text-white">{peopleHired}+</h2>
             <p className="text-sm">People Hired</p>
           </div>
           <div className="text-center">
-            <h2 className="text-2xl font-bold">{totalJobs}+</h2>
+            <h2 className="text-2xl font-bold text-white">{totalJobs}+</h2>
             <p className="text-sm">Total Jobs Available</p>
           </div>
         </div>
